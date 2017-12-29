@@ -1,9 +1,28 @@
-<?php
+<?php 
 
-require("model.php");
+require('controler.php');
 
-$posts = getPosts();
+if(isset($_GET['action'])) {
 
-require("indexView.php");
+	if($_GET['action']== 'listPosts') {
 
+		listPosts();
+	}
 
+	elseif($_GET['action'] == 'post') {
+
+		if(isset($_GET['id']) && $_GET['id']>0) {
+
+			post();
+		}
+		else {
+
+			echo('Aucun identifiant de billet envoyé');			
+		}
+	}
+}
+
+else {
+
+	listPosts();
+}
