@@ -1,9 +1,9 @@
 <?php
 
-require("modele.php");
+require("model.php");
 
-$req = getBillets();
+$posts = getPosts();
 
-require("affichageAccueil.php");
-?>
+require("indexView.php");
+
 
