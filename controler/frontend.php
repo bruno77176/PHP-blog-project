@@ -36,3 +36,18 @@ function addComment($postId, $author, $comment)
         header('Location: index.php?action=post&id=' . $postId);
     }
 }
+
+
+function modifyComment($postId){
+	require('view/frontend/modificationCommentView.php');
+}
+
+function updateComment($postId, $comment, $modifiedComment){
+
+    $commentManager = new \Bruno\Blog\Model\CommentManager();
+
+    $affectedLine = $commentManager->updateComment($postId, $comment, $modifiedComment);
+
+    header('Location: index.php?action=post&id='. $postId);
+    
+}

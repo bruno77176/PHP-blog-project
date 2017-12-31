@@ -33,6 +33,12 @@ try {
 				throw new Exception('Aucun identifiant de billet envoyé');
 			}
 		}
+		elseif($_GET['action'] == 'modifyComment'){
+			modifyComment($_GET['id']);
+		}
+		elseif($_GET['action'] == 'updateComment'){
+			updateComment($_GET['id'], $_GET['comment'],$_POST['modified_comment']);
+		}
 	}
 
 	else {
